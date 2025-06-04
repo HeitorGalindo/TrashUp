@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Código</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="materiais.html">Materiais</a></li>
+        <li><a href="passos.html">Passo a Passo</a></li>
+        <li><a href="resultado.html">Resultado</a></li>
+        <li><a href="arduino.html">Arduino</a></li>
+        <li><a href="codigo.html">Código</a></li>
+        <li><a href="equipe.html">Equipe</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Código Arduino</h2>
+      <p>
+        Abaixo está o código utilizado para controlar a abertura e o fechamento automático da tampa da lixeira.
+        O sistema utiliza um sensor ultrassônico para medir a distância e acionar um servo motor quando detecta aproximação.
+      </p>
+
+      <pre><code><Ultrasonic.h>
+        #include <Servo.h>
+        
+        int distancia = 0;
+        
+        Ultrasonic ultrasonic(7, 6);
+        Servo servo_9;
+        
+        void setup() {
+          servo_9.attach(9);  // Define o pino do servo
+          Serial.begin(9600);            // Inicia o monitor serial para depuração
+        }
+        
+        void loop() {
+          distancia = ultrasonic.read();  // Converte tempo em distância (cm)
+          Serial.print("Distância: ");
+          Serial.print(distancia);
+          Serial.println(" cm");
+        
+          if (distancia > 20) {
+            servo_9.write(0);  // Objeto longe, servo na posição 0
+          } else {
+            servo_9.write(180);  // Objeto próximo, servo gira para 180°
+            delay(2000);         // Espera 2 segundos
+          }
+        
+          delay(300);  // Pequeno atraso para evitar leituras rápidas demais
+      </code></pre>
+
+      <p>
+        O servo motor gira para 180° quando a mão do usuário se aproxima (distância menor que 20 cm) e retorna à posição 0° após alguns segundos.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p style="text-align: center; padding: 10px;">&copy; 2025 - Projeto Lixeira Automática</p>
+  </footer>
+</body>
+</html>

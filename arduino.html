@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arduino</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="materiais.html">Materiais</a></li>
+        <li><a href="passos.html">Passo a Passo</a></li>
+        <li><a href="resultado.html">Resultado</a></li>
+        <li><a href="arduino.html">Arduino</a></li>
+        <li><a href="codigo.html">Código</a></li>
+        <li><a href="equipe.html">Equipe</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Como Funciona o Arduino no Projeto</h2>
+      <p>
+        O Arduino atua como o cérebro da lixeira automática. Ele recebe os sinais do sensor ultrassônico, que mede a distância entre o sensor
+        e um objeto à sua frente. Quando o objeto é detectado a menos de 20 cm — normalmente a mão da pessoa — o Arduino envia um sinal
+        ao servo motor, que gira para abrir a tampa da lixeira.
+      </p>
+      <p>
+        Após alguns segundos, o Arduino envia outro sinal para que o servo motor volte à posição original, fechando a tampa.
+        Todo o sistema funciona com baixo consumo de energia e pode ser alimentado por uma bateria ou fonte externa.
+      </p>
+    </section>
+
+    <section>
+      <h2>Montagem com Arduino</h2>
+      <p>
+        A montagem da lixeira automática foi baseada no circuito abaixo, utilizando uma placa Arduino Uno,
+        um sensor ultrassônico HC-SR04 para medir a distância da mão do usuário e um servo motor SG90 para abrir e fechar a tampa.
+      </p>
+      
+      <figure>
+        <img src="img/circuito.jpg" alt="Esquema da montagem no Arduino com servo e sensor ultrassônico" width="100%" />
+        <figcaption>Figura: Esquema de ligação dos componentes no Arduino Uno.</figcaption>
+      </figure>
+  
+      <h3>Descrição das Conexões</h3>
+      <ul class="lista-arduino">
+        <li>🔌 O servo motor está conectado ao pino digital 9 (sinal), GND e 5V.</li>
+        <li>🔊 O sensor ultrassônico está com o pino TRIG no pino 7 e o ECHO no pino 6 do Arduino.</li>
+        <li>📥 O GND e o VCC do sensor ultrassônico estão conectados à protoboard, recebendo GND e 5V do Arduino.</li>
+        <li>🔁 Toda a alimentação é feita pela própria USB do Arduino conectada ao computador.</li>
+      </ul>
+  
+      <p>
+        O Arduino recebe os sinais do sensor, interpreta a distância e, ao detectar uma aproximação, aciona o servo motor para abrir a tampa automaticamente.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p style="text-align: center; padding: 10px;">&copy; 2025 - Projeto Lixeira Automática</p>
+  </footer>
+</body>
+</html>

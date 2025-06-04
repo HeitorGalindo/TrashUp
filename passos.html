@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="materiais.html">Materiais</a></li>
+            <li><a href="passos.html">Passo a Passo</a></li>
+            <li><a href="resultado.html">Resultado</a></li>
+            <li><a href="arduino.html">Arduino</a></li>
+            <li><a href="codigo.html">Código</a></li>
+            <li><a href="equipe.html">Equipe</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <h1>Passo a Passo da Lixeira Automática</h1>
+    
+        <section>
+            <h2>Passo 1: Reunir os Materiais</h2>
+            <p>Começamos separando todos os componentes necessários, como Arduino Uno, sensor ultrassônico, servo motor, jumpers, protoboard e a estrutura da lixeira.</p>
+            <img src="img/materiais.jpg" alt="Materiais do projeto" width="400">
+        </section>
+    
+        <section>
+          <h2>Passo 2: Preparação da Estrutura</h2>
+          <p>Utilizamos uma lixeira de plástico já pronta como base para o projeto. O único ajuste necessário foi a realização de dois furos frontais para acoplar o sensor ultrassônico. Essa etapa foi feita com o uso de uma furadeira de bancada, garantindo precisão no encaixe do sensor.</p>
+        
+          <figure>
+            <img src="img/lixeira-fechada.jpg" alt="Lixeira original sem furos">
+            <figcaption>Lixeira original sem alterações, usada como base do projeto.</figcaption>
+          </figure>
+        
+          <figure>
+            <img src="img/furando-lixeira.jpg" alt="Furando a tampa com furadeira de bancada">
+            <figcaption>Furação realizada com furadeira de bancada para encaixar o sensor.</figcaption>
+          </figure>
+        
+          <figure>
+            <img src="img/lixeira-com-furos.jpg" alt="Lixeira com os dois furos prontos">
+            <figcaption>Lixeira com os furos prontos para o encaixe do sensor ultrassônico.</figcaption>
+          </figure>
+        </section>
+    
+        <section>
+            <h2>Passo 3: Conexão dos Componentes</h2>
+            <p>Fizemos a conexão dos componentes na protoboard. O sensor ultrassônico foi ligado nos pinos digitais, e o servo motor também foi conectado corretamente ao Arduino.</p>
+            <img src="img/conexao.jpg" alt="Conexão dos componentes" width="400">
+        </section>
+    
+        <section>
+          <h2>Passo 4: Upload do Código</h2>
+          <p>Utilizamos a IDE do Arduino para carregar o código no microcontrolador. O código controla o sensor ultrassônico e o servo motor: quando algo se aproxima da lixeira, a tampa se abre automaticamente e depois se fecha.</p>
+        
+          <pre><code>
+             <Ultrasonic.h>
+              #include <Servo.h>
+              
+              int distancia = 0;
+              
+              Ultrasonic ultrasonic(7, 6);
+              Servo servo_9;
+              
+              void setup() {
+                servo_9.attach(9);  // Define o pino do servo
+                Serial.begin(9600);            // Inicia o monitor serial para depuração
+              }
+              
+              void loop() {
+                distancia = ultrasonic.read();  // Converte tempo em distância (cm)
+                Serial.print("Distância: ");
+                Serial.print(distancia);
+                Serial.println(" cm");
+              
+                if (distancia > 20) {
+                  servo_9.write(0);  // Objeto longe, servo na posição 0
+                } else {
+                  servo_9.write(180);  // Objeto próximo, servo gira para 180°
+                  delay(2000);         // Espera 2 segundos
+                }
+              
+                delay(300);  // Pequeno atraso para evitar leituras rápidas demais
+          </code></pre>
+        </section>
+    
+        <section>
+            <h2>Passo 5: Teste de Funcionamento</h2>
+            <p>Após a montagem, testamos o funcionamento. Quando a mão se aproxima do sensor, a tampa abre automaticamente e depois se fecha.</p>
+            <img src="img/teste.jpg" alt="Teste do sistema em funcionamento" width="400">
+        </section>
+    </main>
+      
+
+</body>
+</html>
