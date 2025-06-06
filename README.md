@@ -24,10 +24,10 @@ Sensibilizar sobre o impacto do lixo eletrônico no meio ambiente e apresentar u
 ![Página inicial](https://github.com/user-attachments/assets/5352cea7-4366-4463-a3f2-6286bfa6ca17 )
 
 ### 💡 Apresentação e Propósito
-![Apresentação e explicação](https://github.com/user-attachments/assets/6e1212d5-24f5-45dc-80f8-08fab95d39fc)
+![Apresentação e explicação](https://github.com/user-attachments/assets/584337f6-2b16-4c5f-b594-c9000cf6ab59)
 
 ### 🧪 Funcionamento Real da Lixeira
-![Funcionamento da lixeira automática](https://github.com/user-attachments/assets/584337f6-2b16-4c5f-b594-c9000cf6ab59)
+![Funcionamento da lixeira automática](https://github.com/user-attachments/assets/6e1212d5-24f5-45dc-80f8-08fab95d39fc)
 
 ## 🛠️ Tecnologias Utilizadas
 
