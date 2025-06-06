@@ -20,8 +20,6 @@ Sensibilizar sobre o impacto do lixo eletrônico no meio ambiente e apresentar u
 
 ## 📸 Imagens do Projeto
 
-## 📸 Imagens do Projeto
-
 ### 🔷 Página Inicial
 ![Página inicial](https://github.com/user-attachments/assets/584337f6-2b16-4c5f-b594-c9000cf6ab59)
 
